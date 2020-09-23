@@ -35,9 +35,9 @@ public class NumberSortDriver {
 //        5. 指定最终输出的kv数据类型
         job.setOutputKeyClass(IntWritable.class);
         job.setOutputValueClass(IntWritable.class);
-//        6. 指定job处理的原始数据路径
+//        6. 指定job处理的原始数据路径 args[0] = "inputdir"
         FileInputFormat.setInputPaths(job,new Path(args[0]));
-//        7. 指定job输出结果路径
+//        7. 指定job输出结果路径 args[0] = "outputdir"
         FileOutputFormat.setOutputPath(job,new Path(args[1]));
 //        8. 提交作业
         boolean flag = job.waitForCompletion(true);
